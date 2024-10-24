@@ -14,7 +14,7 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("pages/index");
 });
 
 app.use("/game", gameRouter);
@@ -22,7 +22,7 @@ app.use("/dev", devRouter);
 app.use("/genre", genreRouter);
 
 app.use("*", (req, res) => {
-  res.render("notFound");
+  res.render("pages/notFound");
 });
 
 const PORT = process.env.PORT || 3000;
