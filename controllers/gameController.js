@@ -1,4 +1,9 @@
-const getAllGame = (req, res) => {};
+const db = require("../db/query");
+
+const getAllGame = async (req, res) => {
+  const games = await db.getAllGame();
+  res.send(games);
+};
 
 const getSingleGame = (req, res) => {};
 
